@@ -12,8 +12,8 @@
 ## 1. Como executar este projeto
 
 ```bash
-git clone [URL do seu repositório]
-cd [pasta]
+git clone https://github.com/cheest-hub/my-firt-project-docker.git
+cd 
 cp .env.example .env
 docker compose up -d --build
 ```
@@ -23,13 +23,13 @@ docker compose up -d --build
 **Para derrubar:**  
 `docker compose down` (mantém dados) ou `docker compose down -v` (apaga dados).
 
-![Texto alternativo](docs/images/Captura_de_tela_2026-07-24_204709.png)
+![Texto alternativo](docs/Captura_de_tela_2026-07-24_204709.png)
 
 ---
 
 ## 2. Imagem e Dockerfile multi-stage
 
-- **Estágios utilizados:** [ex.: builder (instala dependências) e estágio final (runtime enxuto)]
+- **Estágios utilizados:** builder (instala dependências) e estágio final (runtime enxuto)]
 - **Imagem base:** `node:20-alpine` (nos dois estágios)
 - **Usuário de execução:** node, não-root
 - **Tamanho final da imagem:** 68,4MB
