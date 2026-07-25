@@ -9,7 +9,7 @@ Aplicação usada: docker/getting-started-app — To-Do em Node.js
 git clone [URL do seu repositório] cd [pasta] cp .env.example .env docker compose up -d --build
 Acesse: http://localhost:3000
 Para derrubar: docker compose down (mantém dados) ou docker compose down -v (apaga dados).
- 
+(docs\images\'Captura de tela 2026-07-24 202102.png')
 2.	Imagem e Dockerfile multi-stage
 Estágios utilizados: [ex.: builder (instala dependências) e estágio final (runtime enxuto)] Imagem base: node:20-alpine (nos dois estágios)
  Usuário de execução: node, não-root
