@@ -106,17 +106,23 @@ Dockerfile com dois estágios build pra diminuir o tamanho da imagem, diminuir a
 
 ## 7. Quebra proposital do CI
 
-- **O que eu quebrei:** [descreva a alteração exata que você fez]
-- **Erro que apareceu no log:** [cole a mensagem principal]
-- **Como o CI reagiu:** [em qual step falhou e por quê]
-- **Como eu corrigi:** [o que foi alterado]
-- **Link do Pull Request:** [URL]
+- **O que eu quebrei:** alterei a porta do teste para 30001
+- **Erro que apareceu no log:** Error: Process completed with exit code 1.
+- **Como o CI reagiu:** A aplicacao nao subiu a tempo
+- **Como eu corrigi:** coloquei de volta porta 3000
+- **Link do Pull Request:** [\[URL\]](https://github.com/cheest-hub/my-firt-project-docker/actions/runs/30168723001/job/89706033789#step:7:96)
+- **Evidencias do ci**
+- **Error de Porta**
+![Print 7](docs/images/error-porta.png)
+-  **error corrigido**
+![Print 7](docs/images/error-corrigido.png)
+
 
 ---
 
 ## 8. Dificuldades e aprendizados
 
-[3 a 5 linhas: o que travou, como resolveu, o que ficou mais claro sobre containers depois da atividade]
+Tive dificuldades com o contêiner do MySQL reiniciando em loop (Exited 1) devido à passagem incorreta da variável MYSQL_USER=root e com a aplicação não conectando por falta do .env no pipeline. Resolvi ajustando o compose.yaml para passar apenas a MYSQL_ROOT_PASSWORD ao banco, enquanto o app recebia as credenciais completas, e gerando um .env dinâmico no GitHub Actions. Com essa atividade, ficou muito mais claro como o Docker isola os serviços em uma rede interna, a importância crucial do mapeamento exato das variáveis de ambiente e a necessidade de limpar volumes (down -v) ao diagnosticar falhas.
 
 ---
 
@@ -129,6 +135,6 @@ Dockerfile com dois estágios build pra diminuir o tamanho da imagem, diminuir a
 - [x] Rede nomeada + banco não exposto ao host
 - [x] `compose.yaml` sobe tudo com um comando
 - [x] `.env` no `.gitignore` e `.env.example` versionado
-- [ ] CI verde
-- [ ] PR com CI vermelho documentado
-- [ ] Todos os 9 prints no README
+- [x] CI verde
+- [x] PR com CI vermelho documentado
+- [x] Todos os 9 prints no README
