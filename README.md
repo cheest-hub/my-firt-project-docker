@@ -23,7 +23,7 @@ docker compose up -d --build
 **Para derrubar:**  
 `docker compose down` (mantém dados) ou `docker compose down -v` (apaga dados).
 
-![Texto alternativo](docs/Captura_de_tela_2026-07-24_204709.png)
+![Texto alternativo](docs/images/Captura de tela 2026-07-24 204709.png)
 
 ---
 
