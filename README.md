@@ -93,6 +93,7 @@ Dockerfile com dois estágios build pra diminuir o tamanho da imagem, diminuir a
 
 - **Arquivo do workflow:** `.github/workflows/ci.yml`
 - **Gatilhos:** [push e pull_request]
+![Print 7](docs/images/ci-verde.jpeg)
 
 **O que o pipeline faz:**
 1. [valida o compose]
