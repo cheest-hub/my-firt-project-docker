@@ -138,3 +138,62 @@ Tive dificuldades com o contêiner do MySQL reiniciando em loop (Exited 1) devid
 - [x] CI verde
 - [x] PR com CI vermelho documentado
 - [x] Todos os 9 prints no README
+
+# CD — Publicação no Docker Hub
+
+**Aluno(a):** NELSON ENRIQUE CONCHO ACOSTA 
+**Turma:** Noturno  
+**Usuário do Docker Hub:** https://github.com/cheest-hub      
+**Imagem publicada:** n3750n/meu-projeto-docker
+**Link da imagem no Docker Hub:** https://hub.docker.com/r/n3750n/meu-projeto-docker
+
+**Dispara quando:** push na branch `main`  
+**Arquivo do workflow:** `.github/workflows/cd.yml`
+
+## Print 1 — Token criado no Docker Hub
+
+![Token criado no Docker Hub](docs/images/docker-token.png)
+
+---
+
+## Print 2 — Secrets cadastrados no GitHub (DOCKERHUB_USERNAME e DOCKERHUB_TOKEN)
+
+![Chaves cadastradas no GitHub](docs/images/docker-git.png)
+
+---
+
+## Print 3 — Workflow de CD verde na aba Actions
+
+![CD - Publicar no Docker Hub](docs/images/docker-pullcd.png)
+
+---
+
+## Print 4 — Imagem publicada no Docker Hub
+
+![Imagem publicada](docs/images/docker-hub.png)
+
+---
+
+## Print 5 — Docker Pull baixando a imagem publicada
+
+![Docker Pull](docs/images/docker-hub-images.png)
+
+---
+
+# Respostas
+
+### 1. O que é o Docker Hub?
+
+O Docker Hub é um serviço de armazenamento de imagens Docker. Ele permite publicar, compartilhar e baixar imagens para que aplicações possam ser executadas em qualquer ambiente que tenha Docker instalado.
+
+### 2. Diferença entre CI e CD
+
+O CI (Continuous Integration) automatiza a validação do projeto, executando testes e verificando se a aplicação funciona após cada alteração enviada ao repositório. Já o CD (Continuous Delivery) automatiza a publicação da imagem Docker no Docker Hub, tornando-a disponível para uso.
+
+### 3. Por que usar Token e Secrets em vez de escrever usuário e senha no `cd.yml`?
+
+Porque os Secrets armazenam informações sensíveis de forma segura no GitHub. Assim, o usuário e o token não ficam expostos no código do repositório, reduzindo riscos de acesso não autorizado.
+
+### 4. O que significa a tag `latest`?
+
+A tag `latest` representa a versão mais recente da imagem publicada no Docker Hub. Sempre que uma nova imagem é enviada utilizando essa tag, ela passa a ser considerada a versão mais atual do projeto.
